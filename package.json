@@ -1,5 +1,5 @@
 {
-  "name": "bunyan-middleware",
+  "name": "@hdsydsvenskan/bunyan-middleware",
   "version": "0.8.0",
   "description": "Request, response logger middleware using bunyan. Also provides request<>response duration.",
   "main": "index.js",
