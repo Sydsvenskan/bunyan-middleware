@@ -23,7 +23,7 @@ declare function middleware(params: Params, logger: Logger): RequestHandler
 declare function middleware(logger: Logger): RequestHandler
 
 
-declare module 'express' {
+declare namespace Express {
   export interface Request {
     log: Logger
   }
