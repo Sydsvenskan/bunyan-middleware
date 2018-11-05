@@ -1,10 +1,12 @@
-# bunyan-middleware
+# @hdsydsvenskan/bunyan-middleware
 
-[![Dependency Status](https://david-dm.org/tellnes/bunyan-middleware.png)](https://david-dm.org/tellnes/bunyan-middleware)
-[![devDependency Status](https://david-dm.org/tellnes/bunyan-middleware/dev-status.png)](https://david-dm.org/tellnes/bunyan-middleware#info=devDependencies)
+[![Dependency Status](https://david-dm.org/sydsvenskan/bunyan-middleware.png)](https://david-dm.org/sydsvenskan/bunyan-middleware)
+[![devDependency Status](https://david-dm.org/sydsvenskan/bunyan-middleware/dev-status.png)](https://david-dm.org/sydsvenskan/bunyan-middleware#info=devDependencies)
+
+A fork of [tellnes/bunyan-middleware](https://github.com/tellnes/bunyan-middleware) to keep it up to date until the upstream gets updated.
 
 ```shell
-npm install bunyan-middleware --save
+yarn add @hdsydsvenskan/bunyan-middleware
 ```
 
 Request, response logger middleware for [bunyan](https://github.com/trentm/node-bunyan):
@@ -22,7 +24,7 @@ Request, response logger middleware for [bunyan](https://github.com/trentm/node-
 ## Install
 
 ```shell
-npm install bunyan-middleware --save
+yarn add @hdsydsvenskan/bunyan-middleware
 ```
 
 ## Usage
