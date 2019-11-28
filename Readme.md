@@ -5,10 +5,6 @@
 
 A fork of [tellnes/bunyan-middleware](https://github.com/tellnes/bunyan-middleware) to keep it up to date until the upstream gets updated.
 
-```shell
-yarn add @hdsydsvenskan/bunyan-middleware
-```
-
 Request, response logger middleware for [bunyan](https://github.com/trentm/node-bunyan):
 - log request as `req`
 - log response as `res`
@@ -20,6 +16,7 @@ Request, response logger middleware for [bunyan](https://github.com/trentm/node-
 - compatible with pure [http server](http://nodejs.org/api/http.html#http_http_createserver_requestlistener), [express](https://github.com/strongloop/express), [connect](https://github.com/senchalabs/connect) and any http middleware system
 - uses serializers for `req` and `res` based on [bunyan serializers](https://github.com/trentm/node-bunyan#serializers) if you do not already have a serializer defined.
 - obscure headers containing sensitive information in log outputs (configurable with `obscureHeaders`)
+- TypeScript support
 
 ## Install
 
@@ -27,15 +24,21 @@ Request, response logger middleware for [bunyan](https://github.com/trentm/node-
 yarn add @hdsydsvenskan/bunyan-middleware
 ```
 
+or
+
+```shell
+npm install @hdsydsvenskan/bunyan-middleware --save
+```
+
 ## Usage
 
 ```js
-var bunyan = require('bunyan')
-  , bunyanMiddleware = require('bunyan-middleware')
-  , express = require('express')
+const bunyan = require('bunyan')
+const bunyanMiddleware = require('@hdsydsvenskan/bunyan-middleware')
+const express = require('express')
 
-var app = express()
-var logger = bunyan.createLogger({ name: 'My App' })
+const app = express()
+const logger = bunyan.createLogger({ name: 'My App' })
 
 app.use(bunyanMiddleware(
     { headerName: 'X-Request-Id'
@@ -44,7 +47,7 @@ app.use(bunyanMiddleware(
     , obscureHeaders: []
     , logger: logger
     , additionalRequestFinishData: function(req, res) {
-        return { example: true };
+        return { example: true }
       }
     }
   )
@@ -54,6 +57,12 @@ app.get('/', function (req, res) {
   req.log.info('YO DAWG!')
   res.send('ok')
 })
+```
+
+### Import using TypeScript
+
+```ts
+import bunyanMiddleware = require('@hdsydsvenskan/bunyan-middleware')
 ```
 
 ## `X-Request-Id`
